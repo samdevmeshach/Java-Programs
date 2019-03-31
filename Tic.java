@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 public class Tic
 {
-	public int getno(int m[][],int n[])
+	public int getno(int m[][],int n[])  // Method to Verify WIN or LOSS
 	{
 		int q;
 		Random r=new Random();
@@ -11,14 +11,22 @@ public class Tic
 		a0=m[0][0]+m[1][0]+m[2][0];   // Adding First Column
 		a1=m[0][1]+m[1][1]+m[2][1];   // Adding Second Column
 		a2=m[0][2]+m[1][2]+m[2][2];   // Adding Third Column
-		a3=m[0][0]+m[0][1]+m[0][2];   // Adding  Column
-		a4=m[1][0]+m[1][1]+m[1][2];   // Adding First Column
-		a5=m[2][0]+m[2][1]+m[2][2];   // Adding First Column
-		a6=m[0][0]+m[1][1]+m[2][2];   // Adding First Column
-		a7=m[0][2]+m[1][1]+m[2][0];   // Adding First Column
-		if(m[1][1]==0)
+		a3=m[0][0]+m[0][1]+m[0][2];   // Adding First Row
+		a4=m[1][0]+m[1][1]+m[1][2];   // Adding Second Row
+		a5=m[2][0]+m[2][1]+m[2][2];   // Adding Third Row
+		a6=m[0][0]+m[1][1]+m[2][2];   // Adding First Diagonal
+		a7=m[0][2]+m[1][1]+m[2][0];   // Adding Second Diagonal
+		
+
+		if(m[1][1]==0)    // Condition to fill center if not filled by the user
 			return 4;
-		else if(a6==-2)
+
+			/*  1. First constriant : 
+						Condition to Block the winning...
+				2. Secont constraint :
+						Condition to make Computer win the game... 
+			*/
+		else if(a6==-2)   //Diagonal 1
 		{	
 			if(n[0]==0)
 				return 0;
@@ -27,7 +35,7 @@ public class Tic
 			if(n[4]==0)
 				return 4;
 		}
-		else if(a7==-2)
+		else if(a7==-2)	  //Diagonal 2
 		{	
 			if(n[2]==0)
 				return 2;
@@ -36,7 +44,7 @@ public class Tic
 			if(n[4]==0)
 				return 4;
 		}
-		else if(a0==-2)
+		else if(a0==-2)   //First column
 		{	
 			if(n[0]==0)
 				return 0;
@@ -45,7 +53,7 @@ public class Tic
 			if(n[3]==0)
 				return 3;
 		}
-		else if(a1==-2)
+		else if(a1==-2)   //Second column
 		{	
 			if(n[1]==0)
 				return 1;
@@ -54,7 +62,7 @@ public class Tic
 			if(n[7]==0)
 				return 7;
 		}
-		else if(a2==-2)
+		else if(a2==-2)   //Third Column
 		{	
 			if(n[2]==0)
 				return 2;
@@ -63,7 +71,7 @@ public class Tic
 			if(n[5]==0)
 				return 5;
 		}
-		else if(a3==-2)
+		else if(a3==-2)	  //First Row
 		{	
 			if(n[0]==0)
 				return 0;
@@ -72,7 +80,7 @@ public class Tic
 			if(n[1]==0)
 				return 1;
 		}
-		else if(a4==-2)
+		else if(a4==-2)   //Second Row
 		{	
 			if(n[3]==0)
 				return 3;
@@ -81,7 +89,7 @@ public class Tic
 			if(n[5]==0)
 				return 5;
 		}
-		else if(a5==-2)
+		else if(a5==-2)   //Third Row
 		{	
 			if(n[6]==0)
 				return 6;
