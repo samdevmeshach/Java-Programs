@@ -5,9 +5,9 @@ public class geeksCoffee
 	{
 		Scanner in = new Scanner (System.in); 
 		int n,m,i;
-		System.out.println("Enter Number : ");
+		System.out.println("Enter N Value : ");
 		n = in.nextInt();
-        System.out.println("Enter Number : ");
+        System.out.println("Enter M Value : ");
         m = in.nextInt();
 		for (i = 1; i < m; i++)       // Loop for calculating Mth unit coffee Consumed
         {
